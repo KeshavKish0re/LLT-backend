@@ -1,10 +1,10 @@
-# Use Java 17 runtime (Temurin official build, slim variant)
-FROM eclipse-temurin:17-jdk:latest
+# Use official Temurin JDK 17 (slim version)
+FROM eclipse-temurin:17-jdk
 
-# Set working directory inside container
+# Set working directory inside the container
 WORKDIR /app
 
-# Copy the built jar from target/ folder into the container
+# Copy the built jar into the container
 COPY target/*.jar app.jar
 
 # Expose Spring Boot default port
