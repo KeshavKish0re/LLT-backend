@@ -8,7 +8,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.5</version> <!-- ✅ stable version -->
+        <version>3.2.5</version>
         <relativePath/>
     </parent>
 
@@ -22,24 +22,37 @@
     </properties>
 
     <dependencies>
-
         <!-- 🌐 Web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- 🧠 JPA (VERY IMPORTANT) -->
+        <!-- 🧠 JPA -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!-- 💾 H2 Database -->
+        <!-- 🐘 PostgreSQL (for Supabase) -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.6.0</version>
+        </dependency>
+
+        <!-- 💾 H2 Database (optional, for local testing) -->
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
+        </dependency>
+
+        <!-- ⚙️ Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
 
         <!-- 🔁 Devtools -->
@@ -50,13 +63,6 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- ⚙️ Lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-
         <!-- 🧪 Tests -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -64,11 +70,11 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- 📧 Mail -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-mail</artifactId>
         </dependency>
-
     </dependencies>
 
     <build>
