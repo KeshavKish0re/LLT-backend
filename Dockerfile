@@ -1,14 +1,14 @@
-# Step 1: Use Java runtime
-FROM openjdk:17-jdk-slim
+# Use Java 17 runtime (Temurin official build, slim variant)
+FROM eclipse-temurin:17-jdk:latest
 
-# Step 2: Set working directory
+# Set working directory inside container
 WORKDIR /app
 
-# Step 3: Copy the built jar file into the container
+# Copy the built jar from target/ folder into the container
 COPY target/*.jar app.jar
 
-# Step 4: Expose the default Spring Boot port
+# Expose Spring Boot default port
 EXPOSE 8080
 
-# Step 5: Run the jar
+# Run the Spring Boot application
 ENTRYPOINT ["java", "-jar", "app.jar"]
